@@ -1,0 +1,14 @@
+com/kolabs/BuildConfig.java
+ com.kolabs.BuildConfig
+com/rutanambon/ReactNativeFlipper.java
+ com.rutanambon.ReactNativeFlipper
+ com.rutanambon.ReactNativeFlipper$1
+ com.rutanambon.ReactNativeFlipper$2
+ com.rutanambon.ReactNativeFlipper$2$1
+com/kolabs/MainApplication.java
+ com.kolabs.MainApplication
+ com.kolabs.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/kolabs/MainActivity.java
+ com.kolabs.MainActivity
