@@ -26,7 +26,7 @@ export default function Menu2({ navigation, route }) {
     })
 
     const getDataTransaksi = () => {
-        setLoading(true);
+        // setLoading(true);
         POSTDataByTable('manfaat').then(res => {
 
             setData(res.data)
@@ -235,6 +235,8 @@ export default function Menu2({ navigation, route }) {
                             })} />
                             <MyGap jarak={10} />
                             <MyButton title="Filter" onPress={sendFilter} />
+                            <MyGap jarak={10} />
+                            <MyButton title="Lihat Persyaratan" onPress={() => navigation.navigate('Menu2Detail')} warna={colors.secondary} />
                         </View>
 
                         <FlatList data={data} showsVerticalScrollIndicator={false} renderItem={__renderItem} />

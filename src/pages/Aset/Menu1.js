@@ -27,7 +27,7 @@ export default function Menu1({ navigation, route }) {
     })
 
     const getDataTransaksi = () => {
-        setLoading(true);
+        // setLoading(true);
         POSTDataByTable('aset', kirim).then(res => {
             console.log('aset', res.data);
             setData(res.data)
@@ -61,6 +61,7 @@ export default function Menu1({ navigation, route }) {
 
     const filterData = () => {
         POSTDataByTable('aset', {
+            ...kirim,
             key: key
         }).then(res => {
             console.log(res.data);
@@ -192,7 +193,7 @@ export default function Menu1({ navigation, route }) {
                                 borderRadius: 10,
                                 borderColor: Color.blueGray[300]
                             }}>
-                                <MyPicker label="Kecamatan" data={kecamatan} value={kirim.kecamatan} onValueChange={x => {
+                                <MyPicker label="Kecamatan" data={user.jabatan == 'Walikota' ? kecamatan : kecamatan.filter(i => i.value == user.kecamatan)} value={kirim.kecamatan} onValueChange={x => {
                                     setKirim({
                                         ...kirim,
                                         kecamatan: x
