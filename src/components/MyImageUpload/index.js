@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, PermissionsAndroid } from 'react-native';
 import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
-import { Color, colors, fonts } from '../../utils';
+import { Color, colors, fonts, windowWidth } from '../../utils';
 
 export default function MyImageUpload({ label, onFileChange }) {
   const [imageUri, setImageUri] = useState(null);
@@ -106,11 +106,11 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[400]
   },
   image: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
+    width: '100%',
+    height: 220,
+    // borderRadius: 10,
     marginBottom: 20,
-    alignItems: 'center'
+    resizeMode: 'stretch'
   },
   buttonContainer: {
     flexDirection: 'row',

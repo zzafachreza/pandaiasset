@@ -64,9 +64,9 @@ export default function AccountEdit({ navigation, route }) {
     return (
         <SafeAreaView style={{
             flex: 1,
-            backgroundColor: colors.primary,
+            backgroundColor: colors.white,
         }}>
-            <ImageBackground source={require("../../assets/bghome.png")} style={{
+            <ImageBackground style={{
                 flex: 1,
 
             }}>
@@ -75,10 +75,52 @@ export default function AccountEdit({ navigation, route }) {
                     paddingHorizontal: 20,
                 }}>
 
+                    <View style={{
+                        padding: 10,
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
+                        <TouchableOpacity onPress={() => {
 
+
+                            launchImageLibrary({
+                                includeBase64: true,
+                                quality: 1,
+                                mediaType: "photo",
+                                maxWidth: 200,
+                                maxHeight: 200
+                            }, response => {
+                                console.log('All Response = ', response.assets[0]);
+
+                                setKirim({
+                                    ...kirim,
+                                    newfoto_user: `data:${response.assets[0].type};base64, ${response.assets[0].base64}`,
+                                });
+                            });
+
+
+
+                        }} style={{
+                            width: 100,
+                            height: 100,
+                            borderWidth: 1,
+                            borderColor: Color.blueGray[100],
+                            overflow: 'hidden',
+                            borderRadius: 20,
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <Image style={{
+                                width: 100,
+                                height: 100,
+                            }} source={{
+                                uri: kirim.newfoto_user !== null ? kirim.newfoto_user : kirim.foto_user,
+                            }} />
+                        </TouchableOpacity>
+                    </View>
                     <MyInput label="Username" iconname="at-outline" value={kirim.username} onChangeText={x => setKirim({ ...kirim, username: x })} />
                     <MyGap jarak={10} />
-                    <MyInput label="Nama Lengkap Musyrif" iconname="person-outline" value={kirim.nama_lengkap} onChangeText={x => setKirim({ ...kirim, nama_lengkap: x })} />
+                    <MyInput label="Nama Lengkap" iconname="person-outline" value={kirim.nama_lengkap} onChangeText={x => setKirim({ ...kirim, nama_lengkap: x })} />
 
                     <MyGap jarak={10} />
                     <MyInput label="Password" iconname="lock-closed-outline" secureTextEntry={true} onChangeText={x => setKirim({ ...kirim, newpassword: x })} placeholder="Kosongkan jika tidak diubah" />

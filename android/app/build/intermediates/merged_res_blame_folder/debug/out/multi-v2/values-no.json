@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/my/Documents/project/kolabs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-no/values-no.xml",
+            "outputFile": "/Users/my/Documents/project/PandaiAsset/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-no/values-no.xml",
             "map": [
                 {
-                    "source": "/Users/my/Documents/project/kolabs/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/debug/values-no/values-no.xml",
+                    "source": "/Users/my/Documents/project/PandaiAsset/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/debug/values-no/values-no.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

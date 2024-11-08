@@ -76,6 +76,11 @@ export const fonts = {
     fontSize: 12,
     lineHeight: 18
   },
+  captionHeader: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 12,
+    lineHeight: 18
+  },
   primary: {
     300: 'Urbanist-Light',
     400: 'Urbanist-Regular',

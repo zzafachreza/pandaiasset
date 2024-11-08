@@ -21,7 +21,7 @@ export default function MyInput({
   onChangeText,
   value,
   borderWidth = 1,
-  textColor = colors.white,
+  textColor = colors.primary,
   keyboardType,
   secureTextEntry,
   styleInput,
@@ -38,10 +38,9 @@ export default function MyInput({
   return (
     <View style={{}}>
       <Text style={{
-        fontFamily: fonts.primary[700],
+        ...fonts.subheadline3,
         color: textColor,
         marginBottom: 8,
-        fontSize: 17,
       }}>{label}</Text>
       <View style={{
         height: 45,
@@ -76,7 +75,7 @@ export default function MyInput({
           secureTextEntry={secureTextEntry ? tutup : false}
           autoCapitalize="none"
           style={{
-            fontFamily: fonts.primary[500],
+            ...fonts.body3,
             flex: 1, // Flex untuk mengisi ruang yang ada
             paddingLeft: icon ? 10 : 40,
             paddingRight: rightLabel ? 10 : 0, // Spasi tambahan jika ada rightLabel

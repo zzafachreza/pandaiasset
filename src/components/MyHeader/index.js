@@ -16,7 +16,7 @@ export default function MyHeader({ onPress, color = colors.white, title, icon = 
       flexDirection: 'row',
       alignItems: 'center',
       paddingVertical: 20,
-      backgroundColor: colors.primary,
+      backgroundColor: colors.secondary,
       padding: 20,
       justifyContent: 'center',
       borderBottomLeftRadius: 40,
@@ -26,7 +26,7 @@ export default function MyHeader({ onPress, color = colors.white, title, icon = 
 
       <TouchableOpacity onPress={() => navigation.goBack()} style={{
 
-
+        flex: 0.1,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
@@ -36,8 +36,8 @@ export default function MyHeader({ onPress, color = colors.white, title, icon = 
 
 
       <Text style={{
-        ...fonts.headline3,
-        flex: 1,
+        ...fonts.headline5,
+        flex: 0.9,
         textAlign: 'center',
         marginLeft: -20,
 

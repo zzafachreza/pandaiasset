@@ -39,20 +39,14 @@ export default function Login({ navigation, route }) {
     } else {
       setLoading(true);
       console.log(kirim);
-      axios.post(apiURL + 'login', {
-        ...kirim,
-        level: pilih
-      })
+      axios.post(apiURL + 'login', kirim)
         .then(res => {
           setLoading(false);
           console.log(res.data);
           if (res.data.status == 404) {
             toast.show(res.data.message, { type: 'danger' })
           } else {
-            storeData('user', {
-              ...res.data.data,
-              level: pilih
-            });
+            storeData('user', res.data.data);
             navigation.replace('MainApp')
           }
         });
@@ -99,7 +93,7 @@ export default function Login({ navigation, route }) {
         flex: 1,
         width: '100%',
         height: '100%',
-      }} source={require('../../assets/bglogin.png')}>
+      }} source={require('../../assets/bgsplash.png')}>
 
         <ScrollView>
 
@@ -108,13 +102,13 @@ export default function Login({ navigation, route }) {
           }}>
             <View style={{
               alignItems: 'center',
-              marginTop: '5%'
+              marginTop: '20%'
             }}>
 
               <Image style={{
-                width: windowWidth / 1.1,
-                height: windowWidth / 1.5,
-                // resizeMode: 'contain'
+                width: windowWidth / 1.3,
+                height: windowWidth / 2,
+                resizeMode: 'contain'
 
               }} source={require('../../assets/logo.png')} />
             </View>
@@ -122,7 +116,7 @@ export default function Login({ navigation, route }) {
 
             <View style={{
               padding: 20,
-              marginTop: '10%'
+              marginTop: '20%'
             }}>
               {/* FORM VIEW */}
 
@@ -142,7 +136,16 @@ export default function Login({ navigation, route }) {
                 onChangeText={(x) => setKirim({ ...kirim, password: x })}
                 secureTextEntry={true}
               />
+              <TouchableOpacity style={{
+                padding: 10,
+              }}>
+                <Text style={{
+                  color: colors.white,
+                  textAlign: 'right',
+                  ...fonts.subheadline3,
 
+                }}>Lupa Kata Sandi?</Text>
+              </TouchableOpacity>
               {/* Button */}
               <MyGap jarak={20} />
               <MyButton onPress={masuk} title="Masuk" />
@@ -153,12 +156,12 @@ export default function Login({ navigation, route }) {
               <TouchableWithoutFeedback onPress={() => navigation.navigate('Register')}>
                 <View style={{ padding: 10 }}>
                   <Text style={{
-                    fontFamily: fonts.primary[500],
+                    ...fonts.subheadline3,
                     textAlign: "center",
                     color: colors.white,
-                    fontSize: 13
 
-                  }}><Text style={{ fontWeight: "bold" }}>Siswa</Text> belum memiliki akun? Silahkan <Text style={{
+
+                  }}>Belum memiliki akun? Silahkan <Text style={{
                     fontWeight: 'bold'
                   }}>daftar</Text></Text>
                 </View>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/my/Documents/project/kolabs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
+            "outputFile": "/Users/my/Documents/project/PandaiAsset/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "/Users/my/.gradle/caches/transforms-3/2b33f08a78071dc79c67b5b0c82c3366/transformed/appcompat-1.1.0/res/values-sv/values-sv.xml",
@@ -21,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "/Users/my/Documents/project/kolabs/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/debug/values-sv/values-sv.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,111,171,227,286,330,391,439,499,551,597",
-                        "endColumns": "55,59,55,58,43,60,47,59,51,45,56",
-                        "endOffsets": "106,166,222,281,325,386,434,494,546,592,649"
-                    },
-                    "to": {
-                        "startLines": "29,37,38,39,40,41,42,43,44,47,48",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2778,3562,3622,3678,3737,3781,3842,3890,3950,4182,4228",
-                        "endColumns": "55,59,55,58,43,60,47,59,51,45,56",
-                        "endOffsets": "2829,3617,3673,3732,3776,3837,3885,3945,3997,4223,4280"
-                    }
-                },
-                {
                     "source": "/Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/res/values-sv/values-sv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -52,6 +35,23 @@
                         "startOffsets": "2834,2929,3031,3129,3228,3336,3441,4081",
                         "endColumns": "94,101,97,98,107,104,120,100",
                         "endOffsets": "2924,3026,3124,3223,3331,3436,3557,4177"
+                    }
+                },
+                {
+                    "source": "/Users/my/Documents/project/PandaiAsset/node_modules/react-native-date-picker/android/build/intermediates/packaged_res/debug/values-sv/values-sv.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,111,171,227,286,330,391,439,499,551,597",
+                        "endColumns": "55,59,55,58,43,60,47,59,51,45,56",
+                        "endOffsets": "106,166,222,281,325,386,434,494,546,592,649"
+                    },
+                    "to": {
+                        "startLines": "29,37,38,39,40,41,42,43,44,47,48",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2778,3562,3622,3678,3737,3781,3842,3890,3950,4182,4228",
+                        "endColumns": "55,59,55,58,43,60,47,59,51,45,56",
+                        "endOffsets": "2829,3617,3673,3732,3776,3837,3885,3945,3997,4223,4280"
                     }
                 }
             ]

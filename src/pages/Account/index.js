@@ -118,7 +118,7 @@ export default function ({ navigation, route }) {
                         margin: 5,
                         flex: 1,
                     }}>
-                        {/* <View style={{
+                        <View style={{
                             alignSelf: 'center',
                             width: 100,
                             height: 100,
@@ -133,15 +133,32 @@ export default function ({ navigation, route }) {
                                 width: 100,
                                 height: 100,
                             }} source={{
-                                uri: user.file_pengguna,
+                                uri: user.foto_user,
                             }} />
 
-                        </View> */}
+                        </View>
                         <View style={{ padding: 10, }}>
 
 
-                            <MyList label="Nama Lengkap Musyrif" value={user.nama_lengkap} />
+                            <MyList label="Nama Lengkap" value={user.nama_lengkap} />
                             <MyList label="Username" value={user.username} />
+                            <MyList label="Level" value={user.level} />
+                            {user.level == 'ASN' &&
+                                <>
+                                    <MyList label="Jabatan" value={user.jabatan} />
+                                    <MyList label="Kecamatan" value={user.kecamatan} />
+                                    <MyList label="Kelurahan" value={user.kelurahan} />
+                                </>
+                            }
+
+
+                            {user.level == 'SWASTA' &&
+                                <>
+                                    <MyList label="Email" value={user.email} />
+                                    <MyList label="Telepon" value={user.telepon} />
+                                    <MyList label="Lembaga" value={user.lembaga} />
+                                </>
+                            }
 
 
 

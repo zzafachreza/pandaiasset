@@ -32,12 +32,27 @@ import KebersihanPribadiEdit from './Santri/KebersihanPribadiEdit';
 import KebersihanKamarEdit from './Santri/KebersihanKamarEdit';
 import SantriAdd from './Santri/SantriAdd';
 import SantriList from './Santri/SantriList';
+import Menu1 from './Aset/Menu1';
+import Menu1Detail from './Aset/Menu1Detail';
+import Menu2 from './Aset/Menu2';
+import Menu2Detail from './Aset/Menu2Detail';
+import Menu3 from './Aset/Menu3';
+import Menu31Detail from './Aset/Menu31Detail';
+import Menu3Detail from './Aset/Menu3Detail';
 
 
+// NEW ASET
 
 export {
   Splash,
   Home,
+  Menu1,
+  Menu1Detail,
+  Menu2,
+  Menu2Detail,
+  Menu3,
+  Menu31Detail,
+  Menu3Detail,
   KebersihanKamarEdit,
   HasilScreening2,
   ScreeningDetail2,

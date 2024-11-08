@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.kolabs"
+3    package="com.pandaiasset"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -9,23 +9,23 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->/Users/my/Documents/project/kolabs/android/app/src/debug/AndroidManifest.xml:5:5-77
-11-->/Users/my/Documents/project/kolabs/android/app/src/debug/AndroidManifest.xml:5:22-75
+11-->/Users/my/Documents/project/PandaiAsset/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/my/Documents/project/PandaiAsset/android/app/src/debug/AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:9:7-69
-12-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:9:24-66
+12-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:9:7-69
+12-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:9:24-66
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:10:5-65
-13-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:10:22-62
+13-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:10:5-65
+13-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:10:22-62
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:11:5-80
-14-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:11:22-77
+14-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:11:5-80
+14-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:11:22-77
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:12:3-79
-15-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:12:20-76
+15-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:12:3-79
+15-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:12:20-76
 16    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-16-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:13:3-86
-16-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:13:20-83
+16-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:13:3-86
+16-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:13:20-83
 17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 17-->[com.facebook.flipper:flipper:0.93.0] /Users/my/.gradle/caches/transforms-3/8cf55bdce16a002612f05f30a64a017a/transformed/jetified-flipper-0.93.0/AndroidManifest.xml:16:5-76
 17-->[com.facebook.flipper:flipper:0.93.0] /Users/my/.gradle/caches/transforms-3/8cf55bdce16a002612f05f30a64a017a/transformed/jetified-flipper-0.93.0/AndroidManifest.xml:16:22-73
@@ -34,171 +34,171 @@
 20        (NOT to keep screen awake)
 21    -->
 22    <uses-permission android:name="android.permission.WAKE_LOCK" />
-22-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-68
-22-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-65
+22-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-68
+22-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-65
 23    <!--
 24         Required to poll the state of the network connection
 25        and respond to changes
 26    -->
 27    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-27-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:5-79
-27-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:22-76
+27-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:5-79
+27-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:22-76
 28    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Required to access Google Play Licensing -->
-28-->[:react-native-get-location] /Users/my/Documents/project/kolabs/node_modules/react-native-get-location/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
-28-->[:react-native-get-location] /Users/my/Documents/project/kolabs/node_modules/react-native-get-location/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+28-->[:react-native-get-location] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-get-location/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+28-->[:react-native-get-location] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-get-location/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
 29    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-29-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-73
-29-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-70
+29-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-73
+29-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-70
 30
 31    <permission
 31-->[androidx.core:core:1.12.0] /Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-32        android:name="com.kolabs.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+32        android:name="com.pandaiasset.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 32-->[androidx.core:core:1.12.0] /Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 33        android:protectionLevel="signature" />
 33-->[androidx.core:core:1.12.0] /Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 34
-35    <uses-permission android:name="com.kolabs.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+35    <uses-permission android:name="com.pandaiasset.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 35-->[androidx.core:core:1.12.0] /Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 35-->[androidx.core:core:1.12.0] /Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 36
 37    <application
-37-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:16:5-39:19
-38        android:name="com.kolabs.MainApplication"
-38-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:19:7-38
+37-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:16:5-39:19
+38        android:name="com.pandaiasset.MainApplication"
+38-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:19:7-38
 39        android:allowBackup="false"
-39-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:23:7-34
+39-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:23:7-34
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 40-->[androidx.core:core:1.12.0] /Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 41        android:debuggable="true"
 42        android:exported="true"
-42-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:18:7-30
+42-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:18:7-30
 43        android:icon="@mipmap/ic_launcher"
-43-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:21:7-41
+43-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:21:7-41
 44        android:label="@string/app_name"
-44-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:20:7-39
+44-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:20:7-39
 45        android:roundIcon="@mipmap/ic_launcher_round"
-45-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:22:7-52
+45-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:22:7-52
 46        android:theme="@style/AppTheme"
-46-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:25:7-38
+46-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:25:7-38
 47        android:usesCleartextTraffic="true" >
-47-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:17:5-40
+47-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:17:5-40
 48        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-48-->/Users/my/Documents/project/kolabs/android/app/src/debug/AndroidManifest.xml:11:9-86
-48-->/Users/my/Documents/project/kolabs/android/app/src/debug/AndroidManifest.xml:11:19-83
+48-->/Users/my/Documents/project/PandaiAsset/android/app/src/debug/AndroidManifest.xml:11:9-86
+48-->/Users/my/Documents/project/PandaiAsset/android/app/src/debug/AndroidManifest.xml:11:19-83
 49        <activity
-49-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:26:7-38:18
-50            android:name="com.kolabs.MainActivity"
-50-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:28:9-37
+49-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:26:7-38:18
+50            android:name="com.pandaiasset.MainActivity"
+50-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:28:9-37
 51            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-51-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:30:9-86
+51-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:30:9-86
 52            android:exported="true"
-52-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:27:9-32
+52-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:27:9-32
 53            android:label="@string/app_name"
-53-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:29:9-41
+53-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:29:9-41
 54            android:launchMode="singleTask"
-54-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:31:9-40
+54-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:31:9-40
 55            android:windowSoftInputMode="adjustResize" >
-55-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:32:9-51
+55-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:32:9-51
 56            <intent-filter>
-56-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:33:9-37:25
+56-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:33:9-37:25
 57                <action android:name="android.intent.action.MAIN" />
-57-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:34:13-65
-57-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:34:21-62
+57-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:34:13-65
+57-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:34:21-62
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:35:13-73
-59-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:35:23-70
+59-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:35:13-73
+59-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:35:23-70
 60
 61                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
-61-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:36:14-78
-61-->/Users/my/Documents/project/kolabs/android/app/src/main/AndroidManifest.xml:36:22-76
+61-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:36:14-78
+61-->/Users/my/Documents/project/PandaiAsset/android/app/src/main/AndroidManifest.xml:36:22-76
 62            </intent-filter>
 63        </activity>
 64
 65        <provider
-65-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-45:20
+65-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-45:20
 66            android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
-66-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-70
-67            android:authorities="com.kolabs.provider"
-67-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-60
+66-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-70
+67            android:authorities="com.pandaiasset.provider"
+67-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-60
 68            android:exported="false"
-68-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-37
+68-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-37
 69            android:grantUriPermissions="true" >
-69-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-47
+69-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-47
 70            <meta-data
-70-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+70-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 71                android:name="android.support.FILE_PROVIDER_PATHS"
-71-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+71-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 72                android:resource="@xml/provider_paths" />
-72-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+72-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 73        </provider>
 74        <provider
-74-->[:react-native-image-picker] /Users/my/Documents/project/kolabs/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+74-->[:react-native-image-picker] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
 75            android:name="com.imagepicker.ImagePickerProvider"
-75-->[:react-native-image-picker] /Users/my/Documents/project/kolabs/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
-76            android:authorities="com.kolabs.imagepickerprovider"
-76-->[:react-native-image-picker] /Users/my/Documents/project/kolabs/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+75-->[:react-native-image-picker] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+76            android:authorities="com.pandaiasset.imagepickerprovider"
+76-->[:react-native-image-picker] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
 77            android:exported="false"
-77-->[:react-native-image-picker] /Users/my/Documents/project/kolabs/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+77-->[:react-native-image-picker] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 78            android:grantUriPermissions="true" >
-78-->[:react-native-image-picker] /Users/my/Documents/project/kolabs/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+78-->[:react-native-image-picker] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
 79            <meta-data
-79-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+79-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 80                android:name="android.support.FILE_PROVIDER_PATHS"
-80-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+80-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 81                android:resource="@xml/imagepicker_provider_paths" />
-81-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+81-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 82        </provider>
 83        <provider
-83-->[:react-native-share] /Users/my/Documents/project/kolabs/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+83-->[:react-native-share] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
 84            android:name="cl.json.RNShareFileProvider"
-84-->[:react-native-share] /Users/my/Documents/project/kolabs/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-55
-85            android:authorities="com.kolabs.rnshare.fileprovider"
-85-->[:react-native-share] /Users/my/Documents/project/kolabs/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-72
+84-->[:react-native-share] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-55
+85            android:authorities="com.pandaiasset.rnshare.fileprovider"
+85-->[:react-native-share] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-72
 86            android:exported="false"
-86-->[:react-native-share] /Users/my/Documents/project/kolabs/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+86-->[:react-native-share] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 87            android:grantUriPermissions="true" >
-87-->[:react-native-share] /Users/my/Documents/project/kolabs/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+87-->[:react-native-share] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
 88            <meta-data
-88-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+88-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 89                android:name="android.support.FILE_PROVIDER_PATHS"
-89-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+89-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 90                android:resource="@xml/share_download_paths" />
-90-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+90-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 91        </provider>
 92        <provider
-92-->[:react-native-webview] /Users/my/Documents/project/kolabs/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+92-->[:react-native-webview] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
 93            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-93-->[:react-native-webview] /Users/my/Documents/project/kolabs/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
-94            android:authorities="com.kolabs.fileprovider"
-94-->[:react-native-webview] /Users/my/Documents/project/kolabs/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
+93-->[:react-native-webview] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
+94            android:authorities="com.pandaiasset.fileprovider"
+94-->[:react-native-webview] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
 95            android:exported="false"
-95-->[:react-native-webview] /Users/my/Documents/project/kolabs/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+95-->[:react-native-webview] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 96            android:grantUriPermissions="true" >
-96-->[:react-native-webview] /Users/my/Documents/project/kolabs/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+96-->[:react-native-webview] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
 97            <meta-data
-97-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+97-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 98                android:name="android.support.FILE_PROVIDER_PATHS"
-98-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+98-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 99                android:resource="@xml/file_provider_paths" />
-99-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+99-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 100        </provider>
 101        <provider
-101-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
+101-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
 102            android:name="com.RNFetchBlob.Utils.FileProvider"
-102-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
-103            android:authorities="com.kolabs.provider"
-103-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
+102-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
+103            android:authorities="com.pandaiasset.provider"
+103-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
 104            android:exported="false"
-104-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
+104-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
 105            android:grantUriPermissions="true" >
-105-->[:rn-fetch-blob] /Users/my/Documents/project/kolabs/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
+105-->[:rn-fetch-blob] /Users/my/Documents/project/PandaiAsset/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
 106            <meta-data
-106-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+106-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 107                android:name="android.support.FILE_PROVIDER_PATHS"
-107-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+107-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 108                android:resource="@xml/provider_paths" />
-108-->[:react-native-blob-util] /Users/my/Documents/project/kolabs/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+108-->[:react-native-blob-util] /Users/my/Documents/project/PandaiAsset/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 109        </provider>
 110    </application>
 111

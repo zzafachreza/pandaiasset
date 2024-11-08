@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/my/Documents/project/kolabs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "/Users/my/Documents/project/PandaiAsset/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/my/.gradle/caches/transforms-3/c86c686ca9bd48811eda99a813d4895c/transformed/core-1.12.0/res/values-zh-rTW/values-zh-rTW.xml",

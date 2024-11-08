@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/my/Documents/project/kolabs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/Users/my/Documents/project/PandaiAsset/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "/Users/my/.gradle/caches/transforms-3/2b33f08a78071dc79c67b5b0c82c3366/transformed/appcompat-1.1.0/res/values-hdpi-v4/values-hdpi-v4.xml",

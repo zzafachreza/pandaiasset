@@ -13,7 +13,7 @@ import {
     ScrollView,
     FlatList
 } from 'react-native';
-import { MyButton, MyCalendar, MyGap, MyHeader, MyInput, MyInputLogin, MyPicker, MyRadio } from '../../components';
+import { MyButton, MyCalendar, MyFileUploader, MyGap, MyHeader, MyImageUpload, MyInput, MyInputLogin, MyPicker, MyRadio } from '../../components';
 import { MyDimensi, colors, fonts, windowHeight, windowWidth, Color, getDataByTable, POSTDataByTable } from '../../utils';
 import { MYAPP, apiURL, api_token, getData, storeData } from '../../utils/localStorage';
 import { BackgroundImage } from 'react-native-elements/dist/config';
@@ -43,6 +43,11 @@ export default function Register({ navigation, route }) {
         api_token: api_token,
         nama_lengkap: '',
         username: '',
+        telepon: '',
+        email: '',
+        nomor_ktp: '',
+        foto_ktp: 'https://zavalabs.com/nogambar.jpg',
+        lembaga: '',
         password: '',
         repassword: '',
 
@@ -59,6 +64,8 @@ export default function Register({ navigation, route }) {
         if (
             kirim.nama_lengkap.length === 0 &&
             kirim.username.length === 0 &&
+            kirim.telepon.length === 0 &&
+            kirim.nomor_ktp.length === 0 &&
             kirim.password.length === 0
 
         ) {
@@ -87,20 +94,17 @@ export default function Register({ navigation, route }) {
             toast.show('Ulangi kata sandi kamu', {
                 type: 'warning'
             })
-        } else if (kamar.filter(i => i.cek > 0).length == 0) {
+        } else if (kirim.telepon.length == 0) {
 
-            toast.show('Silahkan pilih kelas / kamar minial 1', {
+            toast.show('Masukan nomor telepon', {
                 type: 'warning'
             })
 
         } else {
 
 
-            setLoading(true);
-            POSTDataByTable('register', {
-                ...kirim,
-                kamar: kamar.filter(i => i.cek > 0).map(i => i.id_kamar)
-            }).then(res => {
+            // setLoading(true);
+            POSTDataByTable('register', kirim).then(res => {
                 console.log(res.data);
                 if (res.data.status == 404) {
                     toast.show(res.data.message, {
@@ -112,9 +116,9 @@ export default function Register({ navigation, route }) {
                         type: 'success'
                     });
 
-                    storeData('user', res.data.data)
+                    // storeData('user', res.data.data)
 
-                    navigation.replace('MainApp');
+                    navigation.replace('Login');
 
                 }
             }).finally(() => {
@@ -151,7 +155,7 @@ export default function Register({ navigation, route }) {
         }}>
             {/* <MyHeader title="Daftar Akun" /> */}
 
-            <ImageBackground source={require("../../assets/bglogin.png")} style={{
+            <ImageBackground source={require("../../assets/bgsplash.png")} style={{
                 flex: 1,
                 width: "100%",
                 height: '100%',
@@ -160,27 +164,43 @@ export default function Register({ navigation, route }) {
 
 
                 <ScrollView showsVerticalScrollIndicator={false}>
+                    <Image style={{
+                        alignSelf: 'center',
+                        marginTop: '10%',
+                        width: windowWidth / 1.3,
+                        height: windowWidth / 2,
+                        resizeMode: 'contain',
+                        // marginBottom: 20,
+                        // resizeMode: 'contain'
 
+                    }} source={require('../../assets/logo.png')} />
 
 
                     <View style={{
+                        borderTopRightRadius: 20,
+                        borderTopLeftRadius: 20,
                         padding: 20,
+                        backgroundColor: colors.white,
 
 
                     }}>
-                        <Image style={{
-                            marginTop: '10%',
-                            width: windowWidth / 1.1,
-                            height: windowWidth / 1.5,
-                            marginBottom: 20,
-                            // resizeMode: 'contain'
+                        <Text style={{
 
-                        }} source={require('../../assets/logo.png')} />
+                            ...fonts.headline2,
+                            color: colors.secondary,
+                            textAlign: 'center'
+                        }}>Daftar</Text>
+                        <Text style={{
+                            marginBottom: 20,
+                            ...fonts.body3,
+                            color: Color.blueGray[400],
+                            textAlign: 'center'
+                        }}>Silahkan lengkapi data dibawah ini</Text>
 
                         {/* Nama lengkap siswa */}
                         <MyInput
-                            label="Nama Lengkap Musyrif"
-                            placeholder="Isi Nama Lengkap Musyrif"
+                            label="Nama Lengkap"
+                            placeholder="Isi Nama Lengkap"
                             value={kirim.nama_lengkap}
                             onChangeText={(x) => setKirim({ ...kirim, nama_lengkap: x })}
                         />
@@ -191,6 +211,43 @@ export default function Register({ navigation, route }) {
                             placeholder="Isi Username"
                             value={kirim.username}
                             onChangeText={(x) => setKirim({ ...kirim, username: x })}
+                        />
+                        <MyGap jarak={10} />
+
+                        <MyInput
+                            label="Email"
+                            placeholder="Isi Email"
+                            value={kirim.email}
+                            onChangeText={(x) => setKirim({ ...kirim, email: x })}
+                        />
+                        <MyGap jarak={10} />
+                        <MyInput
+                            label="Telepon"
+                            keyboardType='phone-pad'
+                            placeholder="Isi Telepon"
+                            value={kirim.telepon}
+                            onChangeText={(x) => setKirim({ ...kirim, telepon: x })}
+                        />
+                        <MyGap jarak={10} />
+                        <MyInput
+                            maxLength={16}
+                            keyboardType='number-pad'
+                            label="Nomor KTP"
+                            placeholder="Isi Nomor KTP"
+                            value={kirim.nomor_ktp}
+                            onChangeText={(x) => setKirim({ ...kirim, nomor_ktp: x })}
+                        />
+                        <MyGap jarak={10} />
+                        <MyImageUpload onFileChange={x => setKirim({
+                            ...kirim,
+                            foto_ktp: x
+                        })} label="Foto KTP" />
+                        <MyGap jarak={10} />
+                        <MyInput
+                            label="Lembaga / Instansi"
+                            placeholder="Isi Lembaga / Instansi"
+                            value={kirim.lembaga}
+                            onChangeText={(x) => setKirim({ ...kirim, lembaga: x })}
                         />
                         <MyGap jarak={10} />
                         <MyInput
@@ -210,62 +267,10 @@ export default function Register({ navigation, route }) {
                             secureTextEntry={true}
 
                         />
-                        {/* Data Kamar */}
 
-                        <View style={{
-                            marginVertical: 10,
-
-                        }}>
-
-                            <Text style={{
-                                fontFamily: fonts.primary[700],
-                                color: colors.white,
-                                marginBottom: 8,
-                                fontSize: 17,
-                            }}>Pilih Kelas / Kamar {kamar.length}</Text>
-
-                            <ScrollView style={{
-                                borderRadius: 10,
-                                backgroundColor: colors.white,
-                                padding: 10,
-
-                            }}>
-                                <FlatList
-                                    data={kamar}
-                                    renderItem={({ item, index }) => {
-                                        return (
-                                            <TouchableOpacity onPress={() => {
-                                                let tmp = [...kamar];
-                                                tmp[index].cek = tmp[index].cek > 0 ? 0 : 1;
-                                                setKamar(tmp);
-
-                                            }} style={{
-                                                marginBottom: 10,
-                                                flexDirection: 'row',
-                                                alignItems: 'center'
-                                            }}>
-                                                <View style={{
-                                                    justifyContent: 'center',
-                                                    alignItems: 'center'
-                                                }}>
-                                                    {item.cek == 0 && <Icon type='ionicon' name='ellipse-outline' color={colors.primary} size={24} />}
-                                                    {item.cek == 1 && <Icon type='ionicon' name='checkmark-circle' color={colors.primary} size={24} />}
-                                                </View>
-                                                <Text style={{
-                                                    marginLeft: 10,
-                                                    fontFamily: fonts.primary[600],
-                                                    color: Color.blueGray[900],
-                                                }}>{item.label}</Text>
-                                            </TouchableOpacity>
-                                        )
-                                    }}
-                                />
-                                <MyGap jarak={20} />
-                            </ScrollView>
-                        </View>
 
                         {/* Button register */}
-                        <MyGap jarak={10} />
+                        <MyGap jarak={20} />
                         <MyButton title="Register" onPress={simpan} />
 
                         {/* Button back */}
@@ -273,12 +278,12 @@ export default function Register({ navigation, route }) {
                         <TouchableWithoutFeedback onPress={() => navigation.navigate('Login')}>
                             <View style={{ padding: 10 }}>
                                 <Text style={{
-                                    fontFamily: fonts.primary[500],
+                                    ...fonts.subheadline3,
                                     textAlign: "center",
                                     color: colors.white,
-                                    fontSize: 13
 
-                                }}><Text style={{ fontWeight: "bold" }}>Siswa</Text> sudah memiliki akun?  Silakan <Text style={{
+
+                                }}>Sudah memiliki akun?  Silakan <Text style={{
                                     fontWeight: 'bold'
                                 }}>login</Text></Text>
                             </View>

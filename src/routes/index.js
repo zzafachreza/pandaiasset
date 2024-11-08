@@ -87,6 +87,14 @@ import {
   SantriAdd,
   SantriList,
 
+  Menu1,
+  Menu1Detail,
+  Menu2,
+  Menu2Detail,
+  Menu3,
+  Menu31Detail,
+  Menu3Detail
+
 
 
 } from '../pages';
@@ -129,6 +137,14 @@ export default function Router() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen name="Menu1" component={Menu1} options={{ headerShown: false }} />
+      <Stack.Screen name="Menu1Detail" component={Menu1Detail} options={{ headerShown: false }} />
+      <Stack.Screen name="Menu2" component={Menu2} options={{ headerShown: false }} />
+      <Stack.Screen name="Menu2Detail" component={Menu2Detail} options={{ headerShown: false }} />
+      <Stack.Screen name="Menu3" component={Menu3} options={{ headerShown: false }} />
+      <Stack.Screen name="Menu3Detail" component={Menu3Detail} options={{ headerShown: false }} />
+      <Stack.Screen name="Menu31Detail" component={Menu31Detail} options={{ headerShown: false }} />
       <Stack.Screen name='KebersihanKamarEdit' component={KebersihanKamarEdit} options={{ headerShown: false }} />
 
 

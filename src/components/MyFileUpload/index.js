@@ -42,7 +42,7 @@ export default function MyFileUploader({
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <TouchableOpacity onPress={pickFile} style={[styles.button, { borderColor: borderColor }]}>
-        
+
         <Text style={styles.fileNameText}>
           {fileName ? fileName : 'Pilih File'}
         </Text>
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   label: {
     ...fonts.subheadline3,
     color: colors.primary,
+    marginBottom: 8,
     marginBottom: 8,
   },
   button: {

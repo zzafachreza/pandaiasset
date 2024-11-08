@@ -26,6 +26,7 @@ import MyLoading from '../../components/MyLoading';
 import { Icon } from 'react-native-elements';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useIsFocused } from '@react-navigation/native';
+import MyCarouser from '../../components/MyCarouser';
 
 
 const MyMenu = ({ onPress, img, label, backgroundColor, desc }) => {
@@ -113,149 +114,88 @@ export default function Home({ navigation, route }) {
 
 
 
-
-
-      <View style={{
-        marginHorizontal: 10,
-        padding: 10,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginTop: 50
-      }}>
-        <View>
-          <Text style={{
-            fontFamily: fonts.secondary[600],
-            fontSize: 20,
-            color: colors.white,
-
-          }}>Selamat Datang,</Text>
-
-          <Text style={{
-            fontFamily: fonts.secondary[700],
-            fontSize: 20,
-            color: colors.white,
-
-          }}>{user.nama_lengkap}</Text>
-          <Text style={{
-            fontFamily: fonts.secondary[400],
-            fontSize: 14,
-            color: colors.white,
-
-          }}>{user.nama_sekolah}</Text>
-        </View>
-
-        <View style={{
-          alignItems: "center"
-        }}>
-          <Image style={{
-            width: 54,
-            height: 54,
-            resizeMode: 'contain'
-
-          }} source={require('../../assets/logohome.png')} />
-        </View>
-
-      </View>
-
-
-
-
       <ScrollView>
-        {/* slider */}
+
         <View style={{
-          paddingHorizontal: 20,
-
-          marginTop: -0,
-          alignItems: 'center'
+          marginHorizontal: 10,
+          padding: 10,
+          flexDirection: "row",
+          alignItems: "center",
+          // marginTop: 50
         }}>
+          <View style={{
+            flex: 1,
+          }}>
+            <Text style={{
+              ...fonts.subheadline3,
+              color: colors.white,
 
-          <Image style={{
-            width: '100%',
-            height: 250,
-            resizeMode: 'contain'
-          }} source={require('../../assets/dummy_slider.png')} />
+            }}>Selamat Datang,</Text>
+
+            <Text style={{
+              ...fonts.headline5,
+              color: colors.white,
+              color: colors.white,
+
+            }}>{user.nama_lengkap}</Text>
+
+          </View>
+
+          <View style={{
+            flex: 0.5,
+            alignItems: "center"
+          }}>
+            <Image style={{
+              width: '100%',
+              height: 50,
+              resizeMode: 'contain'
+
+            }} source={require('../../assets/logo.png')} />
+          </View>
 
         </View>
+
+
+
+
+
+        <View style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Image style={{
+            width: windowWidth * 1.2,
+            height: windowWidth / 2.5,
+            resizeMode: 'contain'
+
+          }} source={require('../../assets/banner.png')} />
+        </View>
+        {/* slider */}
+        <MyCarouser />
         {/* end slider */}
 
         {/* main menu */}
         <View style={{
-          margin: 10,
-          paddingHorizontal: 16,
+          margin: 0,
         }}>
+          {
+            user.level == 'ASN' &&
 
-          <View>
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Kamar')}>
-              <View style={{
-                flex: 1,
-                backgroundColor: 'white',
-                padding: 10,
-                borderRadius: 20,
-                flexDirection: "row",
-                // justifyContent: 'center',
-                alignItems: 'center',
-                borderWidth: 2,
-                borderColor: colors.primary
+            <TouchableOpacity onPress={() => navigation.navigate('Menu1', user)} style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <Image style={{ width: windowWidth / 1.1, height: windowWidth / 4, resizeMode: 'contain' }}
+                source={require('../../assets/menu1.png')} />
+            </TouchableOpacity>
+          }
 
-              }}>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu2', user)} style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Image style={{ width: windowWidth / 1.1, height: windowWidth / 4, resizeMode: 'contain' }}
+              source={require('../../assets/menu2.png')} />
+          </TouchableOpacity>
 
-                <Image style={{
-                  width: 74,
-                  height: 74,
-                }} source={require('../../assets/a1.png')} />
-
-
-                <Text style={{
-                  flex: 1,
-                  marginLeft: 10,
-                  ...fonts.headline1,
-                  color: colors.primary,
-                  textAlign: 'left'
-
-
-                }}>Data Asrama Santri</Text>
-
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
-
-          <MyGap jarak={20} />
-
-          <View>
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Materi')}>
-              <View style={{
-                flex: 1,
-                backgroundColor: 'white',
-                padding: 10,
-                borderRadius: 20,
-                flexDirection: "row",
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderWidth: 2,
-                borderColor: colors.primary
-
-              }}>
-
-                <Image style={{
-                  width: 74,
-                  height: 74,
-                }} source={require('../../assets/a2.png')} />
-
-
-                <Text style={{
-                  flex: 1,
-                  marginLeft: 10,
-                  ...fonts.headline1,
-                  color: colors.primary,
-                  textAlign: 'left'
-
-
-                }}>Materi Pelatihan</Text>
-
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu3', user)} style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Image style={{ width: windowWidth / 1.1, height: windowWidth / 4, resizeMode: 'contain' }}
+              source={require('../../assets/menu3.png')} />
+          </TouchableOpacity>
         </View>
 
       </ScrollView>
