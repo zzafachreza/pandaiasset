@@ -1,9 +1,0 @@
-com/pandaiasset/BuildConfig.java
- com.pandaiasset.BuildConfig
-com/pandaiasset/MainApplication.java
- com.pandaiasset.MainApplication
- com.pandaiasset.MainApplication$1
-com/pandaiasset/MainActivity.java
- com.pandaiasset.MainActivity
-com/facebook/react/PackageList.java
- com.facebook.react.PackageList
