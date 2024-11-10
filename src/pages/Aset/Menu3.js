@@ -10,7 +10,9 @@ import { MyButton, MyGap, MyHeader, MyInput, MyPicker } from '../../components';
 import { useIsFocused } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import { WebView } from 'react-native-webview';
-export default function Menu3({ navigation }) {
+export default function Menu3({ navigation, route }) {
+
+    const user = route.params;
 
     const [data, setData] = useState({
         siap: 0,
@@ -48,8 +50,10 @@ export default function Menu3({ navigation }) {
                 flex: 1,
                 padding: 20,
             }}>
-                <WebView javaScriptEnabledAndroid={true}
-                    injectedJavaScript={jsCode} source={{ uri: web }} style={{ flex: 1 }} />
+                <WebView
+
+                    javaScriptEnabledAndroid={true}
+                    source={{ uri: web }} style={{ flex: 1 }} />
             </View>
             <View style={{
                 padding: 20,
@@ -108,31 +112,33 @@ export default function Menu3({ navigation }) {
                     <Icon type='ionicon' name='chevron-forward-circle-outline' color={colors.white} size={20} />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate('Menu31Detail', {
-                    title: 'Keseluruhan Aset',
-                    jumlah: data.all,
-                    bck: colors.success,
-                    txt: colors.white
-                })} style={{
-                    marginBottom: 10,
-                    backgroundColor: colors.success,
-                    borderRadius: 10,
-                    padding: 10,
-                    flexDirection: 'row',
-                    alignItems: 'center'
-                }}>
-                    <Text style={{
-                        flex: 1,
-                        color: colors.white,
-                        ...fonts.caption1
-                    }}>Keseluruhan Aset</Text>
-                    <Text style={{
-                        color: colors.white,
-                        ...fonts.captionHeader,
-                        right: 10,
-                    }}>{data.all}</Text>
-                    <Icon type='ionicon' name='chevron-forward-circle-outline' color={colors.white} size={20} />
-                </TouchableOpacity>
+                {user.level == 'ASN' &&
+                    <TouchableOpacity onPress={() => navigation.navigate('Menu31Detail', {
+                        title: 'Keseluruhan Aset',
+                        jumlah: data.all,
+                        bck: colors.success,
+                        txt: colors.white
+                    })} style={{
+                        marginBottom: 10,
+                        backgroundColor: colors.success,
+                        borderRadius: 10,
+                        padding: 10,
+                        flexDirection: 'row',
+                        alignItems: 'center'
+                    }}>
+                        <Text style={{
+                            flex: 1,
+                            color: colors.white,
+                            ...fonts.caption1
+                        }}>Keseluruhan Aset</Text>
+                        <Text style={{
+                            color: colors.white,
+                            ...fonts.captionHeader,
+                            right: 10,
+                        }}>{data.all}</Text>
+                        <Icon type='ionicon' name='chevron-forward-circle-outline' color={colors.white} size={20} />
+                    </TouchableOpacity>
+                }
 
 
             </View>

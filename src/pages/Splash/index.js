@@ -10,8 +10,9 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { MyButton, MyGap } from '../../components';
-import { MyDimensi, colors, fonts, windowHeight, windowWidth } from '../../utils';
+import { MyDimensi, POSTDataByTable, colors, fonts, windowHeight, windowWidth } from '../../utils';
 import { MYAPP, getData } from '../../utils/localStorage';
+import axios from 'axios';
 
 export default function Splash({ navigation }) {
   const img = new Animated.Value(0.5);
@@ -19,6 +20,10 @@ export default function Splash({ navigation }) {
   const textOpacity = new Animated.Value(0);
 
   useEffect(() => {
+
+    POSTDataByTable('datang').then(res => {
+      console.log(res.data)
+    })
     Animated.parallel([
       Animated.timing(img, {
         toValue: 1,
