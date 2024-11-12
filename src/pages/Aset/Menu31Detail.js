@@ -12,7 +12,7 @@ import { TouchableOpacity } from 'react-native';
 import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 export default function Menu3Detail({ navigation, route }) {
     const ITEM = route.params;
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [kecamatan, setKecamatan] = useState([]);
     const [kelurahan, setKelurahan] = useState([]);

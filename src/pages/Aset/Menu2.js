@@ -32,7 +32,7 @@ export default function Menu2({ navigation, route }) {
     const getDataTransaksi = () => {
         // setLoading(true);
         POSTDataByTable('manfaat', kirim).then(res => {
-
+            console.log('menu manfaat', res.data)
             setData(res.data)
         }).finally(() => {
             setLoading(false);
@@ -170,7 +170,7 @@ export default function Menu2({ navigation, route }) {
                         WATemplate += `Pengembang  : *${item.pengembang}* \n`
                         WATemplate += `Jenis Kewajiban  : *${item.jenis_kewajiban.toString().trim()}* \n`
                         WATemplate += `Luas  : *${new Intl.NumberFormat().format(item.luas)}* \n`
-                        WATemplate += `Satauan  : *${item.satuan}* \n`
+                        WATemplate += `Satuan  : *${item.satuan}* \n`
                         WATemplate += `Nilai  : *${new Intl.NumberFormat().format(item.nilai)}* \n`
                         WATemplate += `Status Pengajuan  : *${item.status_pengajuan}* \n`
 
