@@ -32,7 +32,7 @@ export default function Menu2({ navigation, route }) {
     const getDataTransaksi = () => {
         // setLoading(true);
         POSTDataByTable('manfaat', kirim).then(res => {
-            console.log('menu manfaat', res.data)
+
             setData(res.data)
         }).finally(() => {
             setLoading(false);
@@ -60,7 +60,7 @@ export default function Menu2({ navigation, route }) {
 
     const sendFilter = () => {
         POSTDataByTable('manfaat', kirim).then(res => {
-            // console.log(res.data);
+            console.log('kirim filter', res.data);
             setData(res.data)
         }).finally(() => {
             setLoading(false);
@@ -242,11 +242,11 @@ export default function Menu2({ navigation, route }) {
                             borderColor: Color.blueGray[300]
                         }}>
 
-                            {(user.jabatan == 'Walikota' || user.jabatan == 'Camat') &&
+                            {(user.jabatan == 'Walikota' || user.jabatan == 'Camat' || user.level == 'SWASTA') &&
 
 
                                 <>
-                                    <MyPicker label="Kecamatan" data={user.jabatan == 'Walikota' ? kecamatan : kecamatan.filter(i => i.value == user.kecamatan)} value={kirim.kecamatan} onValueChange={x => {
+                                    <MyPicker label="Kecamatan" data={user.jabatan == 'Camat' ? kecamatan.filter(i => i.value == user.kecamatan) : kecamatan} value={kirim.kecamatan} onValueChange={x => {
                                         setKirim({
                                             ...kirim,
                                             kecamatan: x
