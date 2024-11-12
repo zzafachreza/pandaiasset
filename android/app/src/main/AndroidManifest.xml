@@ -15,6 +15,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
     <application
     android:usesCleartextTraffic="true"
+    
       android:exported="true"
       android:name=".MainApplication"
       android:label="@string/app_name"

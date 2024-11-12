@@ -112,33 +112,33 @@ export default function Menu3({ navigation, route }) {
                     <Icon type='ionicon' name='chevron-forward-circle-outline' color={colors.white} size={20} />
                 </TouchableOpacity>
 
-                {user.level == 'ASN' &&
-                    <TouchableOpacity onPress={() => navigation.navigate('Menu31Detail', {
-                        title: 'Keseluruhan Aset',
-                        jumlah: data.all,
-                        bck: colors.success,
-                        txt: colors.white
-                    })} style={{
-                        marginBottom: 10,
-                        backgroundColor: colors.success,
-                        borderRadius: 10,
-                        padding: 10,
-                        flexDirection: 'row',
-                        alignItems: 'center'
-                    }}>
-                        <Text style={{
-                            flex: 1,
-                            color: colors.white,
-                            ...fonts.caption1
-                        }}>Keseluruhan Aset</Text>
-                        <Text style={{
-                            color: colors.white,
-                            ...fonts.captionHeader,
-                            right: 10,
-                        }}>{data.all}</Text>
-                        <Icon type='ionicon' name='chevron-forward-circle-outline' color={colors.white} size={20} />
-                    </TouchableOpacity>
-                }
+
+                <TouchableOpacity onPress={() => navigation.navigate('Menu31Detail', {
+                    title: 'Keseluruhan Aset',
+                    jumlah: (data.sudah + data.siap),
+                    bck: colors.success,
+                    txt: colors.white
+                })} style={{
+                    marginBottom: 10,
+                    backgroundColor: colors.success,
+                    borderRadius: 10,
+                    padding: 10,
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <Text style={{
+                        flex: 1,
+                        color: colors.white,
+                        ...fonts.caption1
+                    }}>Keseluruhan Aset</Text>
+                    <Text style={{
+                        color: colors.white,
+                        ...fonts.captionHeader,
+                        right: 10,
+                    }}>{data.sudah + data.siap}</Text>
+                    <Icon type='ionicon' name='chevron-forward-circle-outline' color={colors.white} size={20} />
+                </TouchableOpacity>
+
 
 
             </View>

@@ -11,7 +11,7 @@ import { useIsFocused } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 export default function Menu2({ navigation, route }) {
-    const item = route.params;
+    const user = route.params;
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(false);
     const [kecamatan, setKecamatan] = useState([]);
@@ -20,14 +20,18 @@ export default function Menu2({ navigation, route }) {
     const [comp, setcomp] = useState({})
 
     const [kirim, setKirim] = useState({
+        jabatan: user.jabatan,
+        kecamatan_user: user.kecamatan,
+        kelurahan_user: user.kelurahan,
         kecamatan: '',
         kelurahan: '',
         jenis: '',
+        status_pengajuan: ''
     })
 
     const getDataTransaksi = () => {
         // setLoading(true);
-        POSTDataByTable('manfaat').then(res => {
+        POSTDataByTable('manfaat', kirim).then(res => {
 
             setData(res.data)
         }).finally(() => {
@@ -65,6 +69,7 @@ export default function Menu2({ navigation, route }) {
 
     const filterData = () => {
         POSTDataByTable('manfaat', {
+            ...kirim,
             key: key
         }).then(res => {
 
@@ -84,7 +89,7 @@ export default function Menu2({ navigation, route }) {
         }
     }, [isFocus]);
 
-    const MyListData = ({ label, value }) => {
+    const MyListData = ({ label, value, warna = 0 }) => {
         return (
             <View style={{
             }}>
@@ -92,11 +97,33 @@ export default function Menu2({ navigation, route }) {
                     ...fonts.captionHeader,
                     color: colors.secondary
                 }}>{label}</Text>
-                <Text style={{
-                    flex: 1,
-                    ...fonts.caption1,
-                    color: colors.secondary
-                }}>{value}</Text>
+                {warna == 1 &&
+                    <Text style={{
+                        flex: 1,
+                        borderRadius: 8,
+                        paddingHorizontal: 4,
+                        backgroundColor: colors.primary,
+                        ...fonts.caption1,
+                        color: colors.secondary
+                    }}>{value}</Text>
+                }
+                {warna == 2 &&
+                    <Text style={{
+                        flex: 1,
+                        borderRadius: 8,
+                        paddingHorizontal: 4,
+                        backgroundColor: colors.success,
+                        ...fonts.caption1,
+                        color: colors.white
+                    }}>{value}</Text>
+                }
+                {warna == 0 &&
+                    <Text style={{
+                        flex: 1,
+                        ...fonts.caption1,
+                        color: colors.secondary
+                    }}>{value}</Text>
+                }
             </View>
         )
     }
@@ -125,23 +152,27 @@ export default function Menu2({ navigation, route }) {
                         <MyListData label="Kecamatan" value={item.kecamatan} />
 
                         <MyListData label="Kelurahan" value={item.kelurahan} />
+
+
                         <MyListData label="Pengembang" value={item.pengembang} />
 
                         <MyListData label="Jenis Kewajiban" value={item.jenis_kewajiban} />
                         <MyListData label="Luas" value={new Intl.NumberFormat().format(item.luas)} />
                         <MyListData label="Satuan" value={item.satuan} />
-                        <MyListData label="Status" value={item.status_pengajuan} />
+                        <MyListData label="Nilai" value={new Intl.NumberFormat().format(item.nilai)} />
+                        <MyListData label="Status Pengajuan" warna={item.status_pengajuan == 'Sudah dikerjasamakan' ? 2 : 1} value={item.status_pengajuan} />
                     </View>
                     <TouchableOpacity onPress={() => {
                         console.log(item)
-                        let WATemplate = `*Pendayagunaan & Pemanfaatan Aset Jakarta Barat ${sendData.jenis} HIJAB*\n\nNomor Pesanan : *${sendData.nomor_pesanan}*\nTanggal : *${moment().format('dddd, DD MM YYYY')}*\nPengguna : *${user.nama_lengkap} / ${user.telepon}*\n----------------------------------\n`;
+                        let WATemplate = `*Pendayagunaan dan Pemanfaatan Aset Jakarta Barat*\nTanggal : *${moment().format('dddd, DD MM YYYY')}*\nPengguna : *${user.nama_lengkap}*\n----------------------------------\n`;
                         WATemplate += `Kecamatan  : *${item.kecamatan}* \n`
                         WATemplate += `Kelurahan  : *${item.kelurahan}* \n`
                         WATemplate += `Pengembang  : *${item.pengembang}* \n`
-                        WATemplate += `Jenis Kewajiban  : *${item.jenis_kewajiban}* \n`
-                        WATemplate += `Luas  : *${new Intl.NumberFormat().format(item.luas)}}* \n`
+                        WATemplate += `Jenis Kewajiban  : *${item.jenis_kewajiban.toString().trim()}* \n`
+                        WATemplate += `Luas  : *${new Intl.NumberFormat().format(item.luas)}* \n`
                         WATemplate += `Satauan  : *${item.satuan}* \n`
-                        WATemplate += `Luas  : *${item.status}* \n`
+                        WATemplate += `Nilai  : *${new Intl.NumberFormat().format(item.nilai)}* \n`
+                        WATemplate += `Status Pengajuan  : *${item.status_pengajuan}* \n`
 
                         console.log(WATemplate)
                         Linking.openURL('https://wa.me/' + comp.tlp + '?text=' + WATemplate)
@@ -210,28 +241,43 @@ export default function Menu2({ navigation, route }) {
                             borderRadius: 10,
                             borderColor: Color.blueGray[300]
                         }}>
-                            <MyPicker label="Kecamatan" data={kecamatan} value={kirim.kecamatan} onValueChange={x => {
-                                setKirim({
-                                    ...kirim,
-                                    kecamatan: x
-                                });
 
-                                POSTDataByTable('kelurahan', {
-                                    kecamatan: x
-                                }).then(res => {
-                                    console.log('klurahan', res.data);
-                                    setKelurahan(res.data)
-                                })
-                            }} />
-                            <MyGap jarak={10} />
-                            <MyPicker label="Kelurahan" data={kelurahan} value={kirim.kelurahan} onValueChange={x => setKirim({
-                                ...kirim,
-                                kelurahan: x
-                            })} />
-                            <MyGap jarak={10} />
+                            {(user.jabatan == 'Walikota' || user.jabatan == 'Camat') &&
+
+
+                                <>
+                                    <MyPicker label="Kecamatan" data={user.jabatan == 'Walikota' ? kecamatan : kecamatan.filter(i => i.value == user.kecamatan)} value={kirim.kecamatan} onValueChange={x => {
+                                        setKirim({
+                                            ...kirim,
+                                            kecamatan: x
+                                        });
+
+                                        POSTDataByTable('kelurahan', {
+                                            kecamatan: x
+                                        }).then(res => {
+                                            console.log('klurahan', res.data);
+                                            setKelurahan(res.data)
+                                        })
+                                    }} />
+                                    <MyGap jarak={10} />
+                                    <MyPicker label="Kelurahan" data={kelurahan} value={kirim.kelurahan} onValueChange={x => setKirim({
+                                        ...kirim,
+                                        kelurahan: x
+                                    })} />
+                                    <MyGap jarak={10} /></>
+                            }
                             <MyPicker label="Jenis Kewajiban" data={jenis} value={kirim.jenis} onValueChange={x => setKirim({
                                 ...kirim,
                                 jenis: x
+                            })} />
+                            <MyGap jarak={10} />
+                            <MyPicker label="Status Pengajuan" data={[
+                                { label: '', value: '' },
+                                { label: 'Siap untuk dikerjasamakan', value: 'Siap untuk dikerjasamakan' },
+                                { label: 'Sudah dikerjasamakan', value: 'Sudah dikerjasamakan' },
+                            ]} value={kirim.status_pengajuan} onValueChange={x => setKirim({
+                                ...kirim,
+                                status_pengajuan: x
                             })} />
                             <MyGap jarak={10} />
                             <MyButton title="Filter" onPress={sendFilter} />

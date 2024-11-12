@@ -10,7 +10,8 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   SafeAreaView,
-  ScrollView
+  ScrollView,
+  Linking
 } from 'react-native';
 import { MyButton, MyGap, MyInput, MyInputLogin, MyRadio } from '../../components';
 import { MyDimensi, colors, fonts, windowHeight, windowWidth, Color } from '../../utils';
@@ -25,6 +26,7 @@ export default function Login({ navigation, route }) {
   const [loading, setLoading] = useState(false)
   const img = new Animated.Value(0.8);
   const card = new Animated.Value(50);
+
   const toast = useToast();
   const [pilih, setPilih] = useState('Siswa')
 
@@ -136,7 +138,9 @@ export default function Login({ navigation, route }) {
                 onChangeText={(x) => setKirim({ ...kirim, password: x })}
                 secureTextEntry={true}
               />
-              <TouchableOpacity style={{
+              <TouchableOpacity onPress={() => {
+                Linking.openURL('https://wa.me/' + comp.tlp + '?text=Halo *Admin* saya lupa kata sandi')
+              }} style={{
                 padding: 10,
               }}>
                 <Text style={{

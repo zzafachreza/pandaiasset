@@ -86,7 +86,7 @@ export default function Menu3Detail({ navigation, route }) {
         }
     }, [isFocus]);
 
-    const MyListData = ({ label, value }) => {
+    const MyListData = ({ label, value, warna = 0 }) => {
         return (
             <View style={{
             }}>
@@ -94,11 +94,33 @@ export default function Menu3Detail({ navigation, route }) {
                     ...fonts.captionHeader,
                     color: colors.secondary
                 }}>{label}</Text>
-                <Text style={{
-                    flex: 1,
-                    ...fonts.caption1,
-                    color: colors.secondary
-                }}>{value}</Text>
+                {warna == 1 &&
+                    <Text style={{
+                        flex: 1,
+                        borderRadius: 8,
+                        paddingHorizontal: 4,
+                        backgroundColor: colors.primary,
+                        ...fonts.caption1,
+                        color: colors.secondary
+                    }}>{value}</Text>
+                }
+                {warna == 2 &&
+                    <Text style={{
+                        flex: 1,
+                        borderRadius: 8,
+                        paddingHorizontal: 4,
+                        backgroundColor: colors.success,
+                        ...fonts.caption1,
+                        color: colors.white
+                    }}>{value}</Text>
+                }
+                {warna == 0 &&
+                    <Text style={{
+                        flex: 1,
+                        ...fonts.caption1,
+                        color: colors.secondary
+                    }}>{value}</Text>
+                }
             </View>
         )
     }
@@ -132,7 +154,8 @@ export default function Menu3Detail({ navigation, route }) {
                         <MyListData label="Jenis Kewajiban" value={item.jenis_kewajiban} />
                         <MyListData label="Luas" value={new Intl.NumberFormat().format(item.luas)} />
                         <MyListData label="Satuan" value={item.satuan} />
-                        <MyListData label="Status" value={item.status_pengajuan} />
+                        <MyListData label="Nilai" value={new Intl.NumberFormat().format(item.nilai)} />
+                        <MyListData label="Status Pengajuan" warna={item.status_pengajuan == 'Sudah dikerjasamakan' ? 2 : 1} value={item.status_pengajuan} />
                     </View>
                     {/* <TouchableOpacity onPress={() => {
                         console.log(item)

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, PermissionsAndroid } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, PermissionsAndroid, Alert } from 'react-native';
 import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 import { Color, colors, fonts, windowWidth } from '../../utils';
+import { MYAPP } from '../../utils/localStorage';
 
 export default function MyImageUpload({ label, onFileChange }) {
   const [imageUri, setImageUri] = useState(null);
@@ -10,7 +11,8 @@ export default function MyImageUpload({ label, onFileChange }) {
     launchImageLibrary({ mediaType: 'photo' }, (response) => {
       if (response.assets && response.assets.length > 0) {
         const selectedImage = response.assets[0];
-        setImageUri(selectedImage.uri);
+        onFileChange(`data:${selectedImage.type};base64,${selectedImage.base64}`)
+        setImageUri(`data:${selectedImage.type};base64,${selectedImage.base64}`);
       }
     });
   };
@@ -48,23 +50,53 @@ export default function MyImageUpload({ label, onFileChange }) {
       quality: 1,
       includeBase64: true, // Include Base64 encoding for better handling of the image
     };
-    launchCamera({
-      ...options,
-      includeBase64: true,
-      maxWidth: 500,
-      maxHeight: 500,
-    }, (response) => {
+    Alert.alert(MYAPP, 'Silahkan pilih ambil gambar', [
+      { text: 'BATAL' },
+      {
+        text: 'KAMERA',
+        onPress: () => {
+          launchCamera({
+            ...options,
+            includeBase64: true,
+            maxWidth: 500,
+            maxHeight: 500,
+          }, (response) => {
 
-      if (response.didCancel) {
-        console.log('User cancelled camera');
-      } else if (response.errorMessage) {
-        console.log('Camera Error: ', response.errorMessage);
-      } else if (response.assets && response.assets.length > 0) {
-        const capturedImage = response.assets[0];
-        onFileChange(`data:${capturedImage.type};base64,${capturedImage.base64}`)
-        setImageUri(`data:${capturedImage.type};base64,${capturedImage.base64}`);
+            if (response.didCancel) {
+              console.log('User cancelled camera');
+            } else if (response.errorMessage) {
+              console.log('Camera Error: ', response.errorMessage);
+            } else if (response.assets && response.assets.length > 0) {
+              const capturedImage = response.assets[0];
+              onFileChange(`data:${capturedImage.type};base64,${capturedImage.base64}`)
+              setImageUri(`data:${capturedImage.type};base64,${capturedImage.base64}`);
+            }
+          });
+        }
+      },
+      {
+        text: 'GALERI',
+        onPress: () => {
+          launchImageLibrary({
+            ...options,
+            includeBase64: true,
+            maxWidth: 500,
+            maxHeight: 500,
+          }, (response) => {
+
+            if (response.didCancel) {
+              console.log('User cancelled camera');
+            } else if (response.errorMessage) {
+              console.log('Camera Error: ', response.errorMessage);
+            } else if (response.assets && response.assets.length > 0) {
+              const capturedImage = response.assets[0];
+              onFileChange(`data:${capturedImage.type};base64,${capturedImage.base64}`)
+              setImageUri(`data:${capturedImage.type};base64,${capturedImage.base64}`);
+            }
+          });
+        }
       }
-    });
+    ])
   };
 
   useEffect(() => {

@@ -10,7 +10,7 @@ import { MyButton, MyGap, MyHeader, MyInput, MyPicker } from '../../components';
 import { useIsFocused } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
-export default function Menu31Detail({ navigation, route }) {
+export default function Menu3Detail({ navigation, route }) {
     const ITEM = route.params;
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(false);
@@ -27,7 +27,7 @@ export default function Menu31Detail({ navigation, route }) {
 
     const getDataTransaksi = () => {
         // setLoading(true);
-        POSTDataByTable('aset_grap').then(res => {
+        POSTDataByTable('manfaat').then(res => {
 
             setData(res.data)
         }).finally(() => {
@@ -84,7 +84,7 @@ export default function Menu31Detail({ navigation, route }) {
         }
     }, [isFocus]);
 
-    const MyListData = ({ label, value }) => {
+    const MyListData = ({ label, value, warna = 0 }) => {
         return (
             <View style={{
             }}>
@@ -92,14 +92,37 @@ export default function Menu31Detail({ navigation, route }) {
                     ...fonts.captionHeader,
                     color: colors.secondary
                 }}>{label}</Text>
-                <Text style={{
-                    flex: 1,
-                    ...fonts.caption1,
-                    color: colors.secondary
-                }}>{value}</Text>
+                {warna == 1 &&
+                    <Text style={{
+                        flex: 1,
+                        borderRadius: 8,
+                        paddingHorizontal: 4,
+                        backgroundColor: colors.primary,
+                        ...fonts.caption1,
+                        color: colors.secondary
+                    }}>{value}</Text>
+                }
+                {warna == 2 &&
+                    <Text style={{
+                        flex: 1,
+                        borderRadius: 8,
+                        paddingHorizontal: 4,
+                        backgroundColor: colors.success,
+                        ...fonts.caption1,
+                        color: colors.white
+                    }}>{value}</Text>
+                }
+                {warna == 0 &&
+                    <Text style={{
+                        flex: 1,
+                        ...fonts.caption1,
+                        color: colors.secondary
+                    }}>{value}</Text>
+                }
             </View>
         )
     }
+
     const __renderItem = ({ item }) => {
         return (
             <TouchableWithoutFeedback >
@@ -120,27 +143,46 @@ export default function Menu31Detail({ navigation, route }) {
                     <View style={{
                         padding: 10,
                     }}>
-                        <MyListData label="Nomor" value={item.nomor} />
-                        <MyListData label="Kecamatan" value={item.kecamatan} />
-                        <MyListData label="Kelurahan" value={item.kelurahan} />
-                        <MyListData label="Lokasi" value={item.lokasi} />
-                        <MyListData label="Jenis Peruntukan" value={item.jenis} />
 
+                        <MyListData label="Kecamatan" value={item.kecamatan} />
+
+                        <MyListData label="Kelurahan" value={item.kelurahan} />
+                        <MyListData label="Pengembang" value={item.pengembang} />
+
+                        <MyListData label="Jenis Kewajiban" value={item.jenis_kewajiban} />
+                        <MyListData label="Luas" value={new Intl.NumberFormat().format(item.luas)} />
+                        <MyListData label="Satuan" value={item.satuan} />
+                        <MyListData label="Nilai" value={new Intl.NumberFormat().format(item.nilai)} />
+                        <MyListData label="Status Pengajuan" warna={item.status_pengajuan == 'Sudah dikerjasamakan' ? 2 : 1} value={item.status_pengajuan} />
                     </View>
-                    <TouchableOpacity onPress={() => {
-                        navigation.navigate('Menu1Detail', item)
+                    {/* <TouchableOpacity onPress={() => {
+                        console.log(item)
+                        let WATemplate = `*Pendayagunaan & Pemanfaatan Aset Jakarta Barat ${sendData.jenis} HIJAB*\n\nNomor Pesanan : *${sendData.nomor_pesanan}*\nTanggal : *${moment().format('dddd, DD MM YYYY')}*\nPengguna : *${user.nama_lengkap} / ${user.telepon}*\n----------------------------------\n`;
+                        WATemplate += `Kecamatan  : *${item.kecamatan}* \n`
+                        WATemplate += `Kelurahan  : *${item.kelurahan}* \n`
+                        WATemplate += `Pengembang  : *${item.pengembang}* \n`
+                        WATemplate += `Jenis Kewajiban  : *${item.jenis_kewajiban}* \n`
+                        WATemplate += `Luas  : *${new Intl.NumberFormat().format(item.luas)}}* \n`
+                        WATemplate += `Satauan  : *${item.satuan}* \n`
+                        WATemplate += `Luas  : *${item.status}* \n`
+
+                        console.log(WATemplate)
+                        Linking.openURL('https://wa.me/' + comp.tlp + '?text=' + WATemplate)
 
                     }} style={{
                         padding: 10,
-                        backgroundColor: colors.primary,
+                        backgroundColor: colors.success,
                         justifyContent: 'center',
                         alignItems: 'center',
+                        flexDirection: 'row'
                     }}>
+                        <Icon type='ionicon' name='logo-whatsapp' color={colors.white} />
                         <Text style={{
+                            left: 10,
                             ...fonts.headline5,
-                            color: colors.secondary
-                        }}>Lihat Detail</Text>
-                    </TouchableOpacity>
+                            color: colors.white
+                        }}>Whatsapp</Text>
+                    </TouchableOpacity> */}
                     <Image source={require('../../assets/bgmenu.png')} style={{
                         width: '100%',
                         height: 80,
@@ -152,7 +194,6 @@ export default function Menu31Detail({ navigation, route }) {
             </TouchableWithoutFeedback>
         )
     }
-
 
     const [key, setKey] = useState('');
     const [TMP, setTMP] = useState({});

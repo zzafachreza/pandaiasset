@@ -221,6 +221,27 @@ export default function Menu1({ navigation, route }) {
                             </View>
                         }
 
+
+                        {user.jabatan == 'Lurah' &&
+
+                            <View style={{
+                                margin: 5,
+                                padding: 10,
+                                borderWidth: 1,
+                                borderRadius: 10,
+                                borderColor: Color.blueGray[300]
+                            }}>
+
+                                <MyGap jarak={10} />
+                                <MyPicker label="Jenis Peruntukan" data={jenis} value={kirim.jenis} onValueChange={x => setKirim({
+                                    ...kirim,
+                                    jenis: x
+                                })} />
+                                <MyGap jarak={10} />
+                                <MyButton title="Filter" onPress={sendFilter} />
+                            </View>
+                        }
+
                         <FlatList data={data} showsVerticalScrollIndicator={false} renderItem={__renderItem} />
 
                     </ScrollView>
